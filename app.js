@@ -21,13 +21,17 @@ app.set('port', config.settings.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('json spaces', 2);
 
+app.use(express.static(path.join(__dirname, 'public')));
+
+
+// Register the Handlebars
+
 var hbs = exphbs.create({
   defaultLayout: 'main',
   layoutsDir: path.join(__dirname, 'views/layouts'),
   handlebars: handlebars
 });
 
-app.use(express.static(path.join(__dirname, 'public')));
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
@@ -42,6 +46,8 @@ app.use(function(req, res, next){
     res.status(404).render('404', { title: 'Page Not Found' });
 });
 
+//Sync the database and start the server
+
 db
   .sequelize
   .sync({force: true})
@@ -51,7 +57,7 @@ db
     } else {
       //Create the Server instance
       app.listen(app.get('port'), function(){
-        console.log('Zurp Express server listening on port '+ app.get('port'));
+        console.log('Express server listening on port '+ app.get('port'));
         
       });
     }
