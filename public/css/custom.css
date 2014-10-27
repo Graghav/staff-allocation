@@ -1,0 +1,79 @@
+.navbar {
+	z-index: 100000;
+}
+
+.brand {
+	width: 100%;
+	line-height: 1.5;
+	text-align: center;
+}
+
+.jumbotron {
+	position: relative;
+	margin-top: 55px;
+	/* font-size: 12px; */
+	padding: 10px 0;
+	/* color: #fff; */
+	text-align: center;
+	text-shadow: 0 1px 3px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.075);
+	background: #d9d9d9;
+	background-image: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+.jumbotron .lead {
+	font-size: 18px;
+	margin-bottom: 0;
+}
+
+section {
+	margin-top: 30px;
+	margin-left: -20px;
+	margin-right: -20px;
+	padding-top: 30px;
+	padding: 19px;
+	border: 1px solid #d8d8d8;
+	background-color: #ffffff;
+	border-top-width: 0;
+	border-bottom-width: 2px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+fieldset {
+	margin-bottom: 10px;
+}
+
+.help-block {
+	color: #B8B8B8;
+}
+
+.invigilation_slot {
+	margin-bottom: 10px;
+}
+
+.invigilation_slot span {
+	margin-left: 5px;
+}
+
+div.divider {
+	border-bottom: 1px solid #CCC;
+	opacity: 0.5;
+	margin: 15px 0;
+	width: 100%;
+	display: block;
+}
+
+.empty-message {
+	padding: 10px;
+}
+
+button {
+	font-weight: 100 !important;
+}

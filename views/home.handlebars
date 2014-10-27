@@ -1,0 +1,94 @@
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+			<a class="brand">Invigilation - Anna University Theory Examinations - <strong>{{this.year}}</strong></a>
+		</div>
+	</div>
+</div>
+
+<header class="jumbotron subhead" id="overview">
+  <div class="container">
+    <p class="lead">Period of Examination: {{this.period_1}} and {{this.period_2}}</p>
+  </div>
+</header>
+
+<div class="container">
+	<div class="row">
+		<div class="span8 offset2">
+			<section>
+				<div class="page-header">
+					<h4>Please fill in all the fields</h4>
+				</div>
+				<form action="/submit" method="POST">
+					<fieldset>
+						<label>Name:</label>
+						<input class="input-xlarge typeahead" type="text" name="staff_name" required />
+					</fieldset>
+
+					<fieldset>
+						<label>Initials:</label>
+						<input class="input-xlarge" type="text" name="staff_initials" required />
+					</fieldset>
+
+					<fieldset>
+						<label>Designation:</label>
+						<input class="input-xlarge" type="text" id="staff_designation" name="staff_designation" required />
+					</fieldset>
+
+					<fieldset>
+						<label>Department:</label>
+						<input class="input-xlarge" type="text" id="staff_department" name="staff_department" required />
+					</fieldset>
+
+					<fieldset>
+						<label>College ID No:</label>
+						<input class="input-xlarge" type="text" id="staff_id_no" name="staff_id_no" placeholder="As given in ID Card" required />
+					</fieldset>
+
+					<fieldset>
+						<label>Mobile No:</label>
+						<input class="input-xlarge" type="text" name="staff_mobile_no" placeholder="Enter 10 digit mobile number" required />
+					</fieldset>
+
+					<div class="divider"></div>
+
+					<fieldset>
+						<label>Slots of Invigilation:</label>
+						<span class="help-block">
+							If more number of staff prefer the same slot The Exam cell authorities will take final decision in allotting Invigilation duties
+						</span>
+						{{#each this.slots}}
+						<div class="invigilation_slot">
+							<input type="radio" name="staff_invigilation_slot" value="{{this}}"/> 
+							<span>{{this}}</span>
+						</div>
+						{{/each}}
+					</fieldset>
+
+					<div class="divider"></div>
+
+					<fieldset>
+						<label>Preference for Examiner (Internal / External):</label>
+						<span class="help-block">
+							All staff must have atleast one Internal Duty
+						</span>
+						<div class="invigilation_slot">
+							<input type="radio" name="staff_preference" value="Internal Only" />
+							<span>Internal Only</span>
+						</div>
+						<div class="invigilation_slot">
+							<input type="radio" name="staff_preference" value="Both Internal and External" />
+							<span>Both Internal and External</span>
+						</div>
+					</fieldset>
+
+					<div class="divider"></div>
+
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+			</section>
+		</div>
+	</div>
+</div>
+
+
